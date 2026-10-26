@@ -1,0 +1,932 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f3ef;
+}
+
+/* Login Page */
+
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-box {
+    width: 400px;
+    padding: 40px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.login-box h1 {
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+.login-subtitle {
+    text-align: center;
+    color: #666;
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+
+.login-box p {
+    text-align: center;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.login-box label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.login-box button {
+    width: 100%;
+    padding: 12px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Search Page */
+
+.search-page {
+    min-height: 100vh;
+    background-color: #f5f3ef;
+    color: #222;
+    transition: background-color 0.3s, color 0.3s;
+    position: relative;
+}
+
+.search-page.dark-mode {
+    background-color: #181818;
+    color: #f5f5f5;
+}
+
+.top-buttons {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    display: flex;
+    gap: 10px;
+}
+
+.theme-button,
+.logout-button {
+    padding: 9px 16px;
+    border: 1px solid #aaa;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.theme-button {
+    background-color: transparent;
+    color: inherit;
+}
+
+.logout-button {
+    background-color: #333;
+    color: white;
+}
+
+.search-content {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.search-content h1 {
+    font-family: "Times New Roman", serif;
+    font-size: 56px;
+    margin: 0;
+    position: relative;
+    top: -120px;
+    color: #222;
+}
+
+.search-content p {
+    font-style: italic;
+    color: #777;
+    margin: 0;
+    position: relative;
+    top: -95px;
+}
+
+.dark-mode .search-content p {
+    color: #aaa;
+}
+
+.search-form {
+    display: flex;
+    width: 100%;
+    max-width: 700px;
+    gap: 10px;
+}
+
+.search-form input {
+    flex: 1;
+    padding: 15px 18px;
+    border: 1px solid #bbb;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+}
+
+.search-form input:focus {
+    border-color: #555;
+}
+
+.search-form button {
+    padding: 15px 25px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.search-form button:hover {
+    background-color: #555;
+}
+
+.app {
+    min-height: 100vh;
+    background-color: #f5f3ef;
+    color: #222;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.app.dark-mode {
+    background-color: #181818;
+    color: #f5f5f5;
+}
+
+/* Login */
+
+.login-theme-button {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    padding: 9px 16px;
+    border: 1px solid #aaa;
+    border-radius: 6px;
+    background-color: transparent;
+    color: inherit;
+    cursor: pointer;
+}
+
+.login-box {
+    background-color: white;
+    color: #222;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.app.dark-mode .login-box {
+    background-color: #242424;
+    color: #f5f5f5;
+}
+
+.app.dark-mode .login-box input {
+    background-color: #333;
+    color: white;
+    border-color: #555;
+}
+
+.app.dark-mode .login-box input::placeholder {
+    color: #aaa;
+}
+
+/* Search */
+
+.search-page {
+    min-height: 100vh;
+    background-color: transparent;
+    color: inherit;
+}
+
+.app.dark-mode .search-content p {
+    color: #aaa;
+}
+
+.app.dark-mode .search-form input {
+    background-color: #333;
+    color: white;
+    border-color: #555;
+}
+
+.app.dark-mode .search-form input::placeholder {
+    color: #aaa;
+}
+
+.login-box h1 {
+    color: #222;
+}
+
+.app.dark-mode .login-box h1 {
+    color: #f5f5f5;
+}
+
+.app.dark-mode .search-content h1 {
+    color: #f5f5f5;
+}
+
+
+.search-results {
+    width: min(700px, 90%);
+    margin: 35px auto 40px;
+    text-align: left;
+    position: relative;
+    clear: both;
+}
+
+.search-results h2 {
+    position: static;
+    margin: 0 0 22px;
+    padding-bottom: 12px;
+    font-size: 28px;
+}
+
+.book-result {
+    position: static;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0 0 22px;
+    padding: 22px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow-wrap: anywhere;
+}
+
+.book-result h3 {
+    margin: 0 0 18px;
+    font-size: 23px;
+}
+
+.book-result p {
+    position: static;
+    margin: 10px 0;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+.book-description {
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px solid #ccc;
+    line-height: 1.6;
+}
+
+.book-description p {
+    margin-bottom: 0;
+}
+
+.app.dark-mode .book-result {
+    border-color: #555;
+}
+
+.app.dark-mode .book-description {
+    border-top-color: #555;
+}
+
+
+.search-form {
+    width: min(700px, 90%);
+    margin: 25px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    text-align: left;
+}
+
+.filter-group label {
+    font-weight: bold;
+}
+
+.filter-group input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #aaa;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.filter-buttons button {
+    padding: 11px 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.search-error {
+    color: #d32f2f;
+    text-align: center;
+}
+
+.app.dark-mode .filter-group input {
+    background: #292929;
+    color: #fff;
+    border-color: #666;
+}
+
+.app.dark-mode .filter-group input::placeholder {
+    color: #bbb;
+}
+
+
+.search-form {
+    width: min(700px, 90%);
+    margin: 25px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.title-filter-row {
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    gap: 8px;
+    width: 100%;
+}
+
+.title-filter-row > input {
+    flex: 1;
+    min-width: 0;
+    box-sizing: border-box;
+    padding: 13px;
+    border: 1px solid #aaa;
+    border-radius: 7px;
+    font-size: 15px;
+}
+
+.filter-icon-button {
+    position: relative;
+    flex-shrink: 0;
+    width: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #aaa;
+    border-radius: 7px;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+}
+
+.filter-icon-button:hover {
+    background: rgba(128, 128, 128, 0.15);
+}
+
+.filter-count {
+    position: absolute;
+    top: -7px;
+    right: -7px;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 2px;
+    border-radius: 10px;
+    background: #315f9b;
+    color: white;
+    font-size: 11px;
+    line-height: 18px;
+    text-align: center;
+}
+
+.filter-dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    z-index: 100;
+    width: min(320px, calc(100vw - 48px));
+    max-height: 420px;
+    overflow-y: auto;
+    box-sizing: border-box;
+    padding: 16px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background: #fff;
+    color: #222;
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.16);
+    text-align: left;
+}
+
+.filter-dropdown-header,
+.filter-dropdown-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.filter-dropdown-header {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.filter-dropdown-header button {
+    border: none;
+    background: transparent;
+    color: inherit;
+    font-size: 23px;
+    cursor: pointer;
+}
+
+.filter-section {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.filter-section h4 {
+    margin: 4px 0 10px;
+}
+
+.filter-option {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 6px 0;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.filter-option input {
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    flex-shrink: 0;
+    accent-color: #315f9b;
+}
+
+.filter-dropdown-footer {
+    padding-top: 12px;
+}
+
+.filter-dropdown-footer button {
+    padding: 8px 10px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+}
+
+.filter-dropdown-footer button:last-child {
+    background: #315f9b;
+    color: #fff;
+    border-color: #315f9b;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    text-align: left;
+}
+
+.filter-group label {
+    font-weight: bold;
+}
+
+.filter-group input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #aaa;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.filter-buttons button {
+    padding: 11px 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.app.dark-mode .title-filter-row > input,
+.app.dark-mode .filter-group input {
+    background: #292929;
+    color: #fff;
+    border-color: #666;
+}
+
+.app.dark-mode .title-filter-row > input::placeholder,
+.app.dark-mode .filter-group input::placeholder {
+    color: #bbb;
+}
+
+.app.dark-mode .filter-dropdown {
+    background: #292929;
+    color: #f5f5f5;
+    border-color: #555;
+}
+
+.app.dark-mode .filter-dropdown-header,
+.app.dark-mode .filter-section {
+    border-color: #555;
+}
+
+.app.dark-mode .filter-dropdown-footer button {
+    border-color: #666;
+}
+
+
+.title-filter-row {
+    position: relative;
+    width: 100%;
+}
+
+.filter-icon-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.filter-icon-button svg {
+    display: block;
+    flex-shrink: 0;
+}
+
+.filter-dropdown {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    z-index: 1000;
+    width: 320px;
+    max-width: calc(100vw - 32px);
+    max-height: 420px;
+    overflow-y: auto;
+    padding: 16px;
+    box-sizing: border-box;
+    text-align: left;
+    line-height: 1.5;
+    font-family: Arial, sans-serif;
+    background: var(--card-bg, #ffffff);
+    color: var(--text-color, #222222);
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+}
+
+.filter-dropdown * {
+    box-sizing: border-box;
+}
+
+.filter-dropdown .filter-dropdown-header {
+    display: flex;
+    position: static;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 0 0 12px;
+    padding: 0 0 12px;
+    border-bottom: 1px solid #cccccc;
+}
+
+.filter-dropdown .filter-dropdown-header strong {
+    display: block;
+    position: static;
+    margin: 0;
+    padding: 0;
+    font-size: 17px;
+    line-height: 1.4;
+}
+
+.filter-dropdown .filter-section {
+    display: block;
+    position: static;
+    margin: 0;
+    padding: 8px 0;
+}
+
+.filter-dropdown .filter-section h4 {
+    display: block;
+    position: static;
+    margin: 0 0 8px;
+    padding: 0;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.filter-dropdown .filter-option {
+    display: flex;
+    position: static;
+    align-items: center;
+    gap: 9px;
+    margin: 0;
+    padding: 6px 0;
+    cursor: pointer;
+    line-height: 1.5;
+}
+
+.filter-dropdown .filter-option input {
+    width: auto;
+    height: auto;
+    margin: 0;
+    flex-shrink: 0;
+}
+
+.filter-dropdown .filter-option span {
+    display: inline;
+    position: static;
+    margin: 0;
+    padding: 0;
+}
+
+.filter-dropdown .filter-section p {
+    position: static;
+    margin: 5px 0;
+    line-height: 1.5;
+}
+
+.filter-dropdown .filter-dropdown-footer {
+    display: flex;
+    position: static;
+    justify-content: space-between;
+    gap: 8px;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid #cccccc;
+}
+
+.filter-dropdown .filter-dropdown-footer button {
+    position: static;
+    margin: 0;
+}
+
+
+.filter-dropdown .filter-option {
+    display: grid;
+    grid-template-columns: 1fr 20px;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    margin: 0;
+    padding: 7px 0;
+    cursor: pointer;
+}
+
+.filter-dropdown .filter-option span {
+    grid-column: 1;
+    grid-row: 1;
+    text-align: left;
+}
+
+.filter-dropdown .filter-option input {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: center;
+    width: 16px;
+    height: 16px;
+    margin: 0;
+}
+
+
+/* Like and reading-list controls */
+.book-result-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.book-result-heading h3 {
+    margin-right: auto;
+}
+
+.book-action-buttons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.book-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    min-width: 38px;
+    min-height: 36px;
+    padding: 6px 10px;
+    border: 1px solid currentColor;
+    border-radius: 8px;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.book-action span {
+    font-size: 13px;
+}
+
+.book-action.liked {
+    color: #d7355c;
+}
+
+.book-action.added {
+    color: #27864b;
+}
+
+.dashboard-section {
+    margin-top: 28px;
+    text-align: left;
+}
+
+.dashboard-section > h2 {
+    margin-bottom: 14px;
+}
+
+.dashboard-book {
+    margin-bottom: 14px;
+}
+
+@media (max-width: 520px) {
+    .book-result-heading {
+        align-items: flex-start;
+    }
+
+    .book-action {
+        min-width: 32px;
+        padding: 5px 7px;
+    }
+}
+
+.dashboard-empty-message {
+    text-align: left;
+    margin: 0;
+}
+
+.dashboard-section {
+    margin-top: 28px;
+    text-align: left;
+}
+
+.dashboard-section > h2 {
+    text-align: left;
+    margin-bottom: 12px;
+}
+
+.dashboard-book-titles {
+    margin: 0;
+    padding-left: 24px;
+}
+
+.dashboard-book-titles li {
+    margin-bottom: 8px;
+}
+
+.dashboard-empty-message {
+    text-align: left;
+    margin: 0;
+}
+
+/* Dashboard layout fixes */
+.dashboard-page .dashboard-section {
+    display: block;
+    width: 100%;
+    margin: 28px 0;
+    text-align: left !important;
+}
+
+.dashboard-page .dashboard-section h2 {
+    display: block;
+    width: 100%;
+    margin: 0 0 12px;
+    text-align: left !important;
+}
+
+.dashboard-page .dashboard-book-titles {
+    display: block;
+    margin: 0;
+    padding-left: 24px;
+    text-align: left !important;
+}
+
+.dashboard-page .dashboard-book-titles li {
+    margin-bottom: 8px;
+}
+
+.dashboard-page .dashboard-empty-message {
+    margin: 0;
+    text-align: left !important;
+}
+
+/* Dashboard layout */
+.dashboard-page .search-content {
+    display: block;
+    min-height: 100vh;
+    padding: 140px 20px 40px;
+}
+
+.dashboard-page .search-content h1,
+.app.dark-mode .dashboard-page .search-content h1 {
+    position: static;
+    top: auto;
+    text-align: center;
+    margin: 0 0 12px;
+}
+
+.dashboard-page .search-content > p {
+    position: static;
+    top: auto;
+    text-align: center;
+    margin: 24px 0 12px;
+}
+
+.dashboard-page .dashboard-section {
+    width: min(700px, 100%);
+    margin: 35px auto 0;
+    text-align: left;
+}
+
+.dashboard-page .dashboard-section h2 {
+    position: static;
+    margin: 0 0 12px;
+    text-align: left;
+}
+
+.dashboard-page .dashboard-book-titles {
+    margin: 0;
+    padding-left: 24px;
+    text-align: left;
+}
+
+.dashboard-page .dashboard-book-titles li {
+    margin-bottom: 8px;
+}
+
+.dashboard-page .dashboard-empty-message {
+    position: static;
+    margin: 0;
+    text-align: left;
+}
+
+.dashboard-page .welcome-message {
+    margin-top: -30px;
+}
+
+/* Make dashboard headings visible in light mode */
+.app:not(.dark-mode) .dashboard-page .dashboard-section h2 {
+    color: #222;
+}
+
+body:not(.dark-mode) .login-box h1 {
+    color: #222;
+}
+
+body:not(.dark-mode) .login-box h2 {
+    color: #222;
+}
